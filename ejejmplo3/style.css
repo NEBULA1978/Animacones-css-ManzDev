@@ -9,9 +9,35 @@ body {
     animation-name: change-color;
     animation-duration: 7s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  
     /* Abreviada 3 anteriores*/
     /* animation: change-color 5s linear; */
+    animation-iteration-count: infinite;
+    /* animation-iteration-count: 1; */
+    animation-delay: 3s;
+    /* cuando termina vuelve estado inicial */
+    animation-fill-mode: backwards;
+    /* aplica las dos a la vez  tanto el forward como bacwards*/
+    /* animation-fill-mode: both; */
+    animation-direction: normal;
+    animation-direction: alternate;
+    animation-direction: reverse;
+    animation-direction: alternate-reverse;
+    animation-play-state: paused;
+    /* sino ponemos nada esta por defecto */
+    animation-play-state: running;
+}
+/* cuando pongo raton encima se pausa */
+.box:hover{
+    animation-play-state: paused;
+}
+/* cuando pongo raton encima se pausa con javascript*/
+.box.paused{
+    animation-play-state: paused;
+}
+/* cuando pongo raton encima se pausa */
+.box2:hover{
+    animation-play-state: paused;
 }
 
 .box2 {
@@ -21,41 +47,62 @@ body {
     animation-name: change-color2;
     animation-duration: 7s;
     animation-timing-function: linear;
-    animation-iteration-count: infinite;
+    /* animation-iteration-count: infinite; */
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    /* cuando termina animacionse quede en su ultimo estado */
+    animation-fill-mode: forwards;
+
+    /* Abreviado opciones anteriores */
+    animation: change-color 5s linear infinite runnig;
+    /* ,ismo arriba al estar por defecto */
+    /* animation: change-color 5s  infinite ; */
 }
 
 
 
 @keyframes change-color {
+
+    /* A los 0 segundos va a ocurrir esto */
     0% {
         background: indigo;
     }
+
     25% {
         background: green;
-        width: 500px;
+        width: 50px;
     }
+
     75% {
         background: blue;
-        width: 200px;
-    }
-    
-    100% {
-        background: red;
-        width: 300px;
-    }
-}
-@keyframes change-color2 {
-    0% {
-        background: indigo;
-    }
-    25% {
-        background: green;
-    }
-    75% {
-        background: blue;
+        width: 20px;
     }
 
     100% {
         background: red;
+        width: 30px;
+    }
+}
+
+@keyframes change-color2 {
+
+    /* A los 0 segundos va a ocurrir esto */
+    0% {
+        background: indigo;
+    }
+
+    25% {
+        background: green;
+        width: 500px;
+    }
+
+    75% {
+        background: blue;
+        width: 200px;
+    }
+
+    100% {
+        background: red;
+        width: 300px;
     }
 }
